@@ -19,10 +19,11 @@ module.exports = function(DataHelpers) {
 
   tweetsRoutes.post("/", function(req, res) {
     if (!req.body.text) {
+      console.log("hello1");
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
     }
-
+    console.log("hello2");
     const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
     const tweet = {
       user: user,
@@ -41,6 +42,12 @@ module.exports = function(DataHelpers) {
     });
   });
 
-  return tweetsRoutes;
 
+  // tweetsRoutes.post("/tweets", (request, respond) => {
+  //   console.log("hello3");
+
+  //   respond.redirect("www.google.com");
+  // });
+
+  return tweetsRoutes;
 }
