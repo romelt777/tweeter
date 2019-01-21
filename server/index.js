@@ -29,6 +29,23 @@ const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 // Mount the tweets routes at the "/tweets" path prefix:
 app.use("/tweets", tweetsRoutes);
 
+
+// //checks for window scroll, to then call fix function
+// // When the user scrolls the page, execute myFunction
+// window.onscroll = function() {fixNavBar()};
+
+// //function to fix the navigation bar
+//   function fixNavBar() {
+//   if (window.pageYOffset >= fix) {
+//     navbar.classList.add("fix")
+//   } else {
+//     navbar.classList.remove("fix");
+//   }
+// }
+
+
+
+
 app.listen(PORT, () => {
-  console.log("Example app listening on port " + PORT);
+  console.log("Tweeter's app listening on port " + PORT);
 });
