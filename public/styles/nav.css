@@ -12,4 +12,15 @@ nav {
   padding-right: 2em;
   position: fixed;
 }
+nav img {
+  width: 80px;
+  height: 80px;
+  float: left;
+}
 
+nav span {
+  float: left;
+  font-size: 200%;
+  padding-left: 10px;
+  line-height: 80px;
+}
