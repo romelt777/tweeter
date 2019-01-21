@@ -12,11 +12,16 @@ nav {
   padding-right: 2em;
   position: fixed;
 }
+
+/*to style the image, instead of using inline we should use ccs
+*/
 nav img {
   width: 80px;
   height: 80px;
   float: left;
 }
+
+/*to style the header in the nav bar */
 
 nav span {
   float: left;

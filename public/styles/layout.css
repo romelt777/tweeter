@@ -16,10 +16,23 @@ html {
  */
 
 body {
+  border-width: 1px;
+  border-color: red;
   margin: 0;
   color: #244751;
   background-color: #eee;
 }
+
+main {
+  margin: 0 auto;
+  padding-top: 80px;
+  width: 450px;
+  background-color: white;
+  align-self: center;
+}
+
+
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
