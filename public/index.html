@@ -23,6 +23,7 @@
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
+
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
@@ -46,12 +47,17 @@
         </form>
         <form action="/tweets" method="POST">
 
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <textarea name="text" placeholder="What are you humming about?" onkeypress="value"></textarea>
           <input type="submit" value="Tweet">
-          <span class="counter">140</span>
+          <span class="counter"> </span>
         </form>
       </section>
 
     </main>
+
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+
+
   </body>
 </html>
