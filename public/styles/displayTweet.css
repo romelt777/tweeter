@@ -14,7 +14,6 @@ main article {
 
 main article:hover{
   opacity: 1;
-  background-image:
 }
 
 
@@ -85,7 +84,7 @@ main article footer h6{
 }*/
 
 main article footer img{
-  display:block;
+  display:none;
   content:"";
   height: 15px;
   width:15px;
@@ -96,8 +95,8 @@ main article footer img{
 }
 
 
-main aricle footer img:hover{
-  display:hidden;
+main article:hover>footer img{
+  display:block;
   content:"";
   height: 15px;
   width:15px;
