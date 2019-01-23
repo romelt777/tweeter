@@ -31,5 +31,4 @@ function testFunction() {
   }
 }
 
-
-//backspace updates late, doesnt start on 140 1 keystroke late.
+//backspace updates later
