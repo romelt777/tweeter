@@ -89,14 +89,24 @@
  -->
     <script>
       $("form").submit(function(event) {
-        // alert($('textarea').serialize());
         event.preventDefault();
-        $.post("/tweets", $('textarea').serialize(), function(data, status) {
-          // alert(status);
-        });
+        if($('textarea').serialize().length > 145){
+          event.preventDefault();
+          alert("Your tweet is too long.");
+        } else if(($('textarea').serialize().length) === 5){
+          event.preventDefault();
+          alert("Empty tweets are not allowed.");
+        } else {
+          // alert($('textarea').serialize().length);
+          event.preventDefault();
+          $.post("/tweets", $('textarea').serialize(), function(data, status) {
+          alert(status);
+          });
+          }
       });
     </script>
 
+<!-- prevent the submit button if the length is too long.  -->
 
 
 
