@@ -8,7 +8,6 @@
 $(document).ready(function() {
 
 function createTweetElement(tweetInfo){
-
 //filling in hard coded tweet w/ data from object.
 
 return ` <article class="tweets-container">
