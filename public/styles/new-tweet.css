@@ -1,18 +1,20 @@
 /*used to style form
 */
-[class$="new-tweet"] {
+#new-tweet {
   margin-left: 2em;
   margin-right: 2em;
   border-style: ridge;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
-[class$="new-tweet"] h2 {
+#new-tweet h2 {
   text-decoration: underline;
   padding-left: 5px;
  }
 
 
-[class$="new-tweet"] form textarea {
+#new-tweet form textarea {
   padding-left: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -22,21 +24,21 @@
   margin-right: 5px;
 }
 
-[class$="new-tweet"] form input {
+#new-tweet form input {
   margin-left: 5px;
 
 }
 
-[class$="new-tweet"] form {
+#new-tweet form {
   padding-bottom: 5px;
 }
 
-[class$="new-tweet"] {
+#new-tweet {
   background-color: lightgray;
 }
 
 
-[class$="new-tweet"] form span {
+#new-tweet form span {
   float: right;
   padding-right: 5px;
 }
