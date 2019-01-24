@@ -70,11 +70,9 @@ $("form").submit(function(event) {
 
 
 //code for the button to load compose tweet html
-// $('#load-compose').click(funcion() {
-//   // $('#new-tweet').slideToggle("slow");
-// });
 $('#load-compose').click(function () {
   $('#new-tweet').slideToggle("slow");
+  $('textarea').select();
   console.log("im here");
 });
 

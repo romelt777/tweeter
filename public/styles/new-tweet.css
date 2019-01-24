@@ -6,7 +6,7 @@
   border-style: ridge;
   margin-top: 0px;
   margin-bottom: 0px;
-  display:none;
+  display:none; /*display is hidden first until the compose button is clicked. */
 }
 
 #new-tweet h2 {
