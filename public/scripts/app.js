@@ -53,12 +53,14 @@ function renderTweets(tweets) {
 
 $("form").submit(function(event) {
   event.preventDefault();
+  $('.emptyError').slideUp("fast");
+  $('.longError').slideUp("fast");
   if($('textarea').serialize().length > 145){
     event.preventDefault();
-    alert("Your tweet is too long.");
+    $('.longError').slideDown("fast");
   } else if(($('textarea').serialize().length) === 5){
     event.preventDefault();
-    alert("Empty tweets are not allowed.");
+    $('.emptyError').slideDown("fast");
   } else {
     // alert($('textarea').serialize().length);
     event.preventDefault();
