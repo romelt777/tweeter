@@ -9,6 +9,9 @@ $(document).ready(function() {
 
 function createTweetElement(tweetInfo){
 //filling in hard coded tweet w/ data from object.
+
+
+// function to fix cross script vulnerbility, doesnt directly use text into html but converts to text first.
   const input = tweetInfo.content.text;
   function escape(input){
     var span = document.createElement('span');
@@ -16,11 +19,8 @@ function createTweetElement(tweetInfo){
     return span.innerHTML;
   }
 
-
 const safeHTML = `${escape(tweetInfo.content.text)}`;
-
-
-console.log(input);
+// console.log(input);
 // console.log($('<span>')
 return ` <article class="tweet-container">
         <header>
@@ -67,6 +67,19 @@ $("form").submit(function(event) {
     });
   }
 });
+
+
+//code for the button to load compose tweet html
+  // var $button = $('#load-compose');
+  // $button.on('click', function () {
+  //     console.log('Button clicked, performing ajax call...');
+  //     $.ajax('compose.html', { method: 'GET' })
+  //     .then(function (composeHTML) {
+  //       console.log('Success: ', composeHTML);
+  //       $('.container').prepend(composeHTML);
+  //     });
+  // });
+
 
 
 //function to load tweets from website then send them to render function.

@@ -29,3 +29,24 @@ nav span {
   padding-left: 10px;
   line-height: 80px;
 }
+
+
+nav button {
+  background-color: #eee;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 25px;
+  float: right;
+  border-style: solid;
+  border-color: black;
+  border-radius: 20px;
+  border-width: 1.5px;
+  margin-top: 9px;
+  margin-bottom: 5px;
+  color:#00a087;
+
+}
+
+nav button:hover {
+  color: black;
+}
