@@ -10,7 +10,7 @@ $(document).ready(function() {
 function createTweetElement(tweetInfo){
 //filling in hard coded tweet w/ data from object.
 
-return ` <article class="tweets-container">
+return ` <article class="tweet-container">
         <header>
           <img class="logo" src="${tweetInfo.user.avatars.small}" >
           <h2 class="name">${tweetInfo.user.name}</h2>
@@ -35,25 +35,72 @@ function renderTweets(tweets) {
   return result;
 }
 
+      //  catchthe submission of form using jquerry,
+      // prevent the default event from happening.
+      // instead make an ajax request instead of post request.
+
+$("form").submit(function(event) {
+  event.preventDefault();
+  if($('textarea').serialize().length > 145){
+    event.preventDefault();
+    alert("Your tweet is too long.");
+  } else if(($('textarea').serialize().length) === 5){
+    event.preventDefault();
+    alert("Empty tweets are not allowed.");
+  } else {
+    // alert($('textarea').serialize().length);
+    event.preventDefault();
+    $.post("/tweets", $('textarea').serialize(), function(data, status) {
+      // let newUser = (data[data.length - 1]);
+      console.log(data)
+      loadTweets();
+      // $('.tweets-container').append(createTweetElement(newUser))
+    alert(status);
+
+
+    });
+
+    // $.get("/tweets", function(data, status){
+    //   $('.tweets-container').load(location.href+" .tweets-container");
+
+    // });
+    // $.get("/tweets", function(data, status) {
+    //   $('.tweets-container').prependTo(renderTweets(data));
+    //   let newUser = (data[data.length - 1]);
+    //   console.log(data[data.length - 1]);
+    //   $('.tweets-container').append(createTweetElement(newUser))
+    // });
+    // $('.tweets-container').append(
+    // ` <article class="tweets-container">
+    //     <header>
+    //       <img class="logo" src="${newUser.user.avatars.small}" >
+    //       <h2 class="name">${newUser.user.name}</h2>
+    //       <h4 class ="handle">${newUser.user.handle}</h4>
+    //     </header>
+    //       <span class="tweet">${newUser.content.text}</span>
+    //     <footer>
+    //       <h6 class="date">${newUser.created_at}</h6>
+    //       <img src="/images/like.png">
+    //       <img src="/images/post.png">
+    // //       <img src="/images/retweet.png">
+    // //     </footer>
+    // //   </article>`);
+    // });
+  }
+});
+
+
 //function to load tweets from website then send them to render function.
 function loadTweets() {
   $.get("/tweets", function(data, status) {
     // alert("hey")
     // alert(renderTweets(data));
-   $('.tweets-container').append(renderTweets(data));
+   $('.tweets-container').empty().prepend(renderTweets(data.reverse()));
   });
 }
 
 
-
 loadTweets();
-
-
-
-
-
-
-
 
 
 });
