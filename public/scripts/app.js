@@ -70,15 +70,13 @@ $("form").submit(function(event) {
 
 
 //code for the button to load compose tweet html
-  // var $button = $('#load-compose');
-  // $button.on('click', function () {
-  //     console.log('Button clicked, performing ajax call...');
-  //     $.ajax('compose.html', { method: 'GET' })
-  //     .then(function (composeHTML) {
-  //       console.log('Success: ', composeHTML);
-  //       $('.container').prepend(composeHTML);
-  //     });
-  // });
+// $('#load-compose').click(funcion() {
+//   // $('#new-tweet').slideToggle("slow");
+// });
+$('#load-compose').click(function () {
+  $('#new-tweet').slideToggle("slow");
+  console.log("im here");
+});
 
 
 

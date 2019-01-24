@@ -6,6 +6,7 @@
   border-style: ridge;
   margin-top: 0px;
   margin-bottom: 0px;
+  display:none;
 }
 
 #new-tweet h2 {
