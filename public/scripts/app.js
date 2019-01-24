@@ -9,15 +9,27 @@ $(document).ready(function() {
 
 function createTweetElement(tweetInfo){
 //filling in hard coded tweet w/ data from object.
+  const input = tweetInfo.content.text;
+  function escape(input){
+    var span = document.createElement('span');
+    span.appendChild(document.createTextNode(tweetInfo.content.text));
+    return span.innerHTML;
+  }
 
+
+const safeHTML = `${escape(tweetInfo.content.text)}`;
+
+
+console.log(input);
+// console.log($('<span>')
 return ` <article class="tweet-container">
         <header>
           <img class="logo" src="${tweetInfo.user.avatars.small}" >
           <h2 class="name">${tweetInfo.user.name}</h2>
           <h4 class ="handle">${tweetInfo.user.handle}</h4>
-        </header>
-          <span class="tweet">${tweetInfo.content.text}</span>
-        <footer>
+        </header>` +
+        '<span>' + safeHTML + '</span>' +
+        `<footer>
           <h6 class="date">${tweetInfo.created_at}</h6>
           <img src="/images/like.png">
           <img src="/images/post.png">
@@ -51,41 +63,8 @@ $("form").submit(function(event) {
     // alert($('textarea').serialize().length);
     event.preventDefault();
     $.post("/tweets", $('textarea').serialize(), function(data, status) {
-      // let newUser = (data[data.length - 1]);
-      console.log(data)
       loadTweets();
-      // $('.tweets-container').append(createTweetElement(newUser))
-    alert(status);
-
-
     });
-
-    // $.get("/tweets", function(data, status){
-    //   $('.tweets-container').load(location.href+" .tweets-container");
-
-    // });
-    // $.get("/tweets", function(data, status) {
-    //   $('.tweets-container').prependTo(renderTweets(data));
-    //   let newUser = (data[data.length - 1]);
-    //   console.log(data[data.length - 1]);
-    //   $('.tweets-container').append(createTweetElement(newUser))
-    // });
-    // $('.tweets-container').append(
-    // ` <article class="tweets-container">
-    //     <header>
-    //       <img class="logo" src="${newUser.user.avatars.small}" >
-    //       <h2 class="name">${newUser.user.name}</h2>
-    //       <h4 class ="handle">${newUser.user.handle}</h4>
-    //     </header>
-    //       <span class="tweet">${newUser.content.text}</span>
-    //     <footer>
-    //       <h6 class="date">${newUser.created_at}</h6>
-    //       <img src="/images/like.png">
-    //       <img src="/images/post.png">
-    // //       <img src="/images/retweet.png">
-    // //     </footer>
-    // //   </article>`);
-    // });
   }
 });
 
@@ -95,6 +74,7 @@ function loadTweets() {
   $.get("/tweets", function(data, status) {
     // alert("hey")
     // alert(renderTweets(data));
+
    $('.tweets-container').empty().prepend(renderTweets(data.reverse()));
   });
 }
