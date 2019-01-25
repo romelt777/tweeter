@@ -12,6 +12,8 @@ nav {
   padding-right: 2em;
   position: fixed;
   z-index: 1;
+/*  z index is the stack order of elements. if number greater than it will be in front.. only works for positioned elements.
+*/
 }
 
 /*to style the image, instead of using inline we should use ccs
