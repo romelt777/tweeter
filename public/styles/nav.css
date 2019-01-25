@@ -11,6 +11,7 @@ nav {
   padding-left: 2em;
   padding-right: 2em;
   position: fixed;
+  z-index: 1;
 }
 
 /*to style the image, instead of using inline we should use ccs
