@@ -27,6 +27,7 @@ function testFunction() {
     return char;
   } else {
     count[0].innerHTML = char;
+    document.getElementsByClassName("counter")[0].style.color = "black";
     return char;
   }
 }

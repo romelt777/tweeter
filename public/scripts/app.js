@@ -67,6 +67,7 @@ $("form").submit(function(event) {
     $.post("/tweets", $('textarea').serialize(), function(data, status) {
       loadTweets();
     });
+    $('textarea').val('');
   }
 });
 
