@@ -5,6 +5,8 @@ const userHelper    = require("../lib/util/user-helper")
 const express       = require('express');
 const tweetsRoutes  = express.Router();
 
+
+
 module.exports = function(DataHelpers) {
 
   tweetsRoutes.get("/", function(req, res) {
@@ -19,11 +21,10 @@ module.exports = function(DataHelpers) {
 
   tweetsRoutes.post("/", function(req, res) {
     if (!req.body.text) {
-      // console.log("hello1");
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
     }
-    // console.log("hello2");
+
     const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
     const tweet = {
       user: user,

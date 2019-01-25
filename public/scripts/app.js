@@ -1,8 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 
 
 $(document).ready(function() {
@@ -20,8 +15,35 @@ function createTweetElement(tweetInfo){
   }
 
 const safeHTML = `${escape(tweetInfo.content.text)}`;
-// console.log(input);
-// console.log($('<span>')
+
+//for the date i can use the stamp then convert to how many days ago or minutes or seconds using if statements.
+// console.log(`${tweetInfo.created_at}`);
+
+//this is the differernce in milliseconds between creation and now. we will have to convert to actual time.
+let diff = (Date.now() - (`${tweetInfo.created_at}`));
+console.log(diff);
+//60 000 miliseconds in a minute, If under one minute convert to seconds then round.
+if(diff < 60000) {
+  diff = Math.round(((diff / 60000) * 60)) + " seconds ago. ";
+} else if(60000 <= diff && diff < 90000) {
+  diff = Math.round(((diff / 3600000) * 60)) + " minute ago."; // if the diff is between 1 and 1.5 minutes round to one minute remove the s.
+} else if(90000 <= diff && diff < 3600000) {
+  diff = Math.round(((diff / 3600000) * 60)) + " minutes ago."; //convert to minutes.
+} else if(3600000 <= diff && diff < 5400000) {
+  diff = Math.round(((diff / 86400000) * 24)) + " hour ago.";  //converts to hours. this is always be one hour.
+} else if(5400000 <= diff && diff < 86400000) {
+  diff = Math.round(((diff / 86400000) * 24)) + " hours ago."; //converts to hours
+} else if(86400000 <= diff && diff < 129600000) {
+  diff = Math.round(((diff / 31556952000) * 365)) + " day ago.";  //concerts to one day
+} else if(86400000 <= diff && diff < 31556952000) {
+  diff = Math.round(((diff / 31556952000) * 365)) + " days ago.";  //concerts to days,
+} else if(31556952000 <= diff && diff < 47335428000) {
+  diff = Math.round(((diff / 31556952000))) + " year ago." //if between 1.0 and 1.5 years convert to a single year.
+} else{
+  diff = Math.round(((diff / 31556952000))) + " years ago." // if over 1.5 years, will convert to 2 years or more.
+}
+
+
 return ` <article class="tweet-container">
         <header>
           <img class="logo" src="${tweetInfo.user.avatars.small}" >
@@ -30,7 +52,7 @@ return ` <article class="tweet-container">
         </header>` +
         '<span>' + safeHTML + '</span>' +
         `<footer>
-          <h6 class="date">${tweetInfo.created_at}</h6>
+          <h6 class="date">${diff}</h6>
           <img src="/images/like.png">
           <img src="/images/post.png">
           <img src="/images/retweet.png">
@@ -84,8 +106,6 @@ $('#load-compose').click(function () {
 //function to load tweets from website then send them to render function.
 function loadTweets() {
   $.get("/tweets", function(data, status) {
-    // alert("hey")
-    // alert(renderTweets(data));
 
    $('.tweets-container').empty().prepend(renderTweets(data.reverse()));
   });
