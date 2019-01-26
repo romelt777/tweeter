@@ -59,6 +59,8 @@ main article span{
   display: block;
   padding-left: 15px;
   padding-top: 50px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 

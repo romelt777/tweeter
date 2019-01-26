@@ -18,7 +18,7 @@ const safeHTML = `${escape(tweetInfo.content.text)}`;
 
 //this is the differernce in milliseconds between creation and now. we will have to convert to actual time.
 let diff = (Date.now() - (`${tweetInfo.created_at}`));
-console.log(diff);
+
 //60 000 miliseconds in a minute, If under one minute convert to seconds then round.
 if(diff < 60000) {
   diff = Math.round(((diff / 60000) * 60)) + " seconds ago. ";
@@ -89,6 +89,34 @@ $("form").submit(function(event) {
     $('textarea').val(''); //this clears the text area, after successful tweet.
   }
 });
+
+var char = 140;
+var count = document.getElementsByClassName("counter");
+count[0].innerHTML = char;
+
+
+//get elements by name returns an array so we must reference to use.
+
+var listen1 = document.getElementsByName("text");
+listen1[0].addEventListener("keypress", testFunction); //listens to text box, if key is pressed then function is called.
+
+function testFunction() {
+  char = 139 - this.value.length;
+  if (char < 0){
+    count[0].innerHTML = char;
+    document.getElementsByClassName("counter")[0].style.color = "red";
+    return char;
+  } else {
+    count[0].innerHTML = char;
+    document.getElementsByClassName("counter")[0].style.color = "black";
+    return char;
+  }
+}
+
+
+
+
+
 
 
 //code for the button to load compose tweet html
