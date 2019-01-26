@@ -1,10 +1,7 @@
 
-
 $(document).ready(function() {
 
 function createTweetElement(tweetInfo){
-//filling in hard coded tweet w/ data from object.
-
 
 // function to fix cross script vulnerbility, doesnt directly use text into html but converts to text first.
   const input = tweetInfo.content.text;
@@ -75,21 +72,21 @@ function renderTweets(tweets) {
 
 $("form").submit(function(event) {
   event.preventDefault();
-  $('.emptyError').slideUp("fast");
+  $('.emptyError').slideUp("fast"); //slide up error codes.
   $('.longError').slideUp("fast");
-  if($('textarea').serialize().length > 145){
+
+  if($('textarea').serialize().length > 145){ //use 145 because of "text=" is 5 characters.
     event.preventDefault();
     $('.longError').slideDown("fast");
   } else if(($('textarea').serialize().length) === 5){
     event.preventDefault();
     $('.emptyError').slideDown("fast");
   } else {
-    // alert($('textarea').serialize().length);
     event.preventDefault();
     $.post("/tweets", $('textarea').serialize(), function(data, status) {
-      loadTweets();
+    loadTweets();
     });
-    $('textarea').val('');
+    $('textarea').val(''); //this clears the text area, after successful tweet.
   }
 });
 
@@ -98,7 +95,6 @@ $("form").submit(function(event) {
 $('#load-compose').click(function () {
   $('#new-tweet').slideToggle("slow");
   $('textarea').select();
-  console.log("im here");
 });
 
 
@@ -106,13 +102,9 @@ $('#load-compose').click(function () {
 //function to load tweets from website then send them to render function.
 function loadTweets() {
   $.get("/tweets", function(data, status) {
-
    $('.tweets-container').empty().prepend(renderTweets(data.reverse()));
   });
 }
 
-
 loadTweets();
-
-
 });

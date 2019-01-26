@@ -29,10 +29,10 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   console.log(`success connect: ${MONGODB_URI}`);
 
 //sending database to datahelpers.
-  var DataHelpers = require("./lib/data-helpers.js")(db);
+  const DataHelpers = require("./lib/data-helpers.js")(db);
 
 
-  var tweetsRoutes = require("./routes/tweets")(DataHelpers);
+  const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 
   app.use("/tweets", tweetsRoutes);
 
