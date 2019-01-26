@@ -21,4 +21,7 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Photos of Project
 
-![Tweet is too long]
+![Error for tweets over 140 characters.](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/long-tweet.png)
+
+![Error for empty tweet.](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/empty-tweet.png)
+
