@@ -87,10 +87,12 @@ $("form").submit(function(event) {
     loadTweets();
     });
     $('textarea').val(''); //this clears the text area, after successful tweet.
-    count[0].innerHTML = 140
+    count[0].innerHTML = 140; //resets the counter.
   }
 });
 
+
+//setting variable for character counter,
 var char = 140;
 var count = document.getElementsByClassName("counter");
 count[0].innerHTML = char;
@@ -115,17 +117,11 @@ function characterCounter() {
 }
 
 
-
-
-
-
-
 //code for the button to load compose tweet html
 $('#load-compose').click(function () {
   $('#new-tweet').slideToggle("slow");
   $('textarea').select();
 });
-
 
 
 //function to load tweets from website then send them to render function.

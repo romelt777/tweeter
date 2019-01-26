@@ -11,9 +11,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 
-
-
-
 //setting up the mongo database
 const Mongo = require("mongodb");
 const MongoClient = require("mongodb").MongoClient;
@@ -30,7 +27,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 
 //sending database to datahelpers.
   const DataHelpers = require("./lib/data-helpers.js")(db);
-
 
   const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 
