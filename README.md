@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone. The application automatically renders new tweets and saves them to MongoDB database. All tweets are displayed in reverse chronological order. For tweets with a very long word, users are able to horizontal scroll to view. 
 
 
 ## Dependencies
