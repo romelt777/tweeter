@@ -16,21 +16,27 @@ Tweeter is a simple, single-page Twitter clone.
 ## Getting Started
 
 ```
-install all dependencies (using 'npm install' command)
-Run the development web server using the 'npm start' command.
-open http://localhost:3000
+- install all dependencies (using 'npm install' command)
+- Run the development web server using the 'npm start' command.
+- open http://localhost:3000
 ```
 
 ## Photos of Project
 
-![Error for tweets over 140 characters.](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/long-tweet.png)
+- Error for tweets over 140 characters
+![](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/long-tweet.png)
 
-![Error for empty tweet.](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/empty-tweet.png)
+- Error for empty tweet
+![](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/empty-tweet.png)
 
-![Dynamic date stamp.](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/dynamic-date-ago-stamp.png)
+- Dynamic date stamp
+![](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/dynamic-date-ago-stamp.png)
 
-![Long tweet without any spaces.](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/long-tweet-with-no-space.png)
+- Long tweet without any spaces
+![](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/long-tweet-with-no-space.png)
 
-![Compose tweet](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/compose-tweet.png)
+- Compose tweet
+![](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/compose-tweet.png)
 
-![My personal tweet](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/personal-tweet.png)
+- My personal tweet
+![](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/personal-tweet.png)
