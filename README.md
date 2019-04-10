@@ -24,10 +24,10 @@ Tweeter is a simple, single-page Twitter clone.
 ## Photos of Project
 
 - Error for tweets over 140 characters
-![](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/long-tweet.png)
+![](https://github.com/romelt777/tweeter/blob/master/docs/long-tweet.png)
 
 - Error for empty tweet
-![](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/empty-tweet.png)
+![](https://github.com/romelt777/tweeter/blob/master/docs/empty-tweet.png)
 
 - Dynamic date stamp
 ![](https://github.com/romelt777/tweeter/blob/feature/mongodb/docs/dynamic-date-ago-stamp.png)
